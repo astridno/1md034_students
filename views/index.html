@@ -1,66 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Page title shown in window title</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>Allt burgar här</title>
         <meta charset="utf-8"/>
     </head>
     <body>
       <main>
-        <h1>Burgare på nätet</h1>
+
+        <section id = header>
+          <h1>Burgare på nätet</h1>
+          <img src="http://www.kjohnsonfirm.com/wp-content/uploads/2012/08/header-man.jpg">
+        </section>
 
         <section id = "utbud">
           <h2>Utbud</h2>
 
-          <table>
-            <thead>
-                <tr>
-                    <th>ELD</th>
-                    <th>VATTEN</th>
-                    <th>JORD</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src="http://www.freakingnews.com/pictures/16500/Fir-Burger--16904.jpg" alt="Span" title="Another in-line element" width="200"></td>
-                    <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkD6Sjskr9dLspLUB51ICXBiEUFuARSXiLj30CZk--bSz6oZyg" alt="Span" title="Another in-line element" width="200"></td>
-                    <td><img src="https://pbs.twimg.com/media/DieqYUMUYAApCc4.jpg" alt="Span" title="Another in-line element" width="200"></td>
-                </tr>
-                <tr>
-                    <td>
+          <div class="wrapper">
+
+
+                    <div class="box a">BURGARE</div>
+                    <div class="box a">BULGARIE</div>
+                    <div class="box a">BRURGER</div>
+
+
+
+                    <div class="box b"><img src="https://i.pinimg.com/originals/ef/08/65/ef0865a83a47e946e086a9e97ead23df.jpg" width = 400px ></div>
+                    <div class="box b"><img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Cheese_Burger_Emoji_large.png?v=1480481064" width = 400px</div> </div>
+                    <div class="box b"><img src="https://friendlystock.com/wp-content/uploads/2018/04/7-laughing-lol-hamburger-emoji-cartoon-clipart.jpg" width = 400px></div>
+
+
+
+                    <div class="box c">
                       <ul>
-                        <li>spår av nötter</li>
+                        <li>spår av <span id="alergen">ananas</span></li>
+
                         <li>god</li>
                       </ul>
-                    </td>
+                    </div>
 
-                    <td>
+                    <div class="box c">
                       <ul>
-                        <li>spår av nötter</li>
+                        <li>spår av <span id="alergen">laktos</span></li>
                         <li>god</li>
                       </ul>
-                    </td>
+                    </div>
 
-                    <td>
+                    <div class="box c">
                       <ul>
-                        <li>spår av nötter</li>
+                        <li>spår av <span id="alergen">nötter</span></li>
                         <li>god</li>
                       </ul>
-                    </td>
-                </tr>
+                    </div>
 
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2">Total</td>
-                    <td>SEK 203</td>
-                </tr>
-            </tfoot>
-          </table>
+
+              </div>
 
         </section>
 
-        <section id = "Kontakt">
-          <h3>Kontakt info</h3>
+        <section id = "kontakt">
+          <h2>Kontakt info</h2>
           <form>
             <p>
                 <label for="name">Namn: </label><br>

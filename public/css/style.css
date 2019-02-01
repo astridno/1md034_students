@@ -1,0 +1,71 @@
+#header > img {
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+}
+
+#header > h1 {
+  position: absolute;
+
+}
+
+body {
+    font-family: "Courier New";
+    font-size: 150%;
+}
+
+#alergen {
+  font-weight: bold;
+}
+
+#kontakt {
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #000000;
+    color: #fff;
+}
+
+#utbud {
+  padding: 10px;
+  border: 2px solid #000000;
+  border-spacing: inherit;
+  border-radius: 20px;
+}
+
+h1 {
+    margin: 30px;
+}
+
+h2 {
+  margin: 20px;
+}
+button:hover {
+    background-color: #000000;
+    cursor: text;
+}
+button {
+  margin: 50px;
+}
+
+section {
+  margin: 50px;
+}
+
+.wrapper {
+     display: grid;
+     grid-gap: 0px;
+     grid-template-columns: 400px 400px 400px;
+     background-color: #fff;
+     color: #000;
+ }
+
+ .a {
+     grid-row: 1;
+
+ }
+ .b {
+     grid-row: 2;
+ }
+ .c {
+     grid-row: 3 ;
+ }
