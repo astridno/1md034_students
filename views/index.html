@@ -1,10 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>DELI-VERY</title>
+        <title>Page title shown in window title</title>
+        <meta charset="utf-8"/>
     </head>
     <body>
-        <h1>Hello World!!!</h1>
-        <a href="/map" target="_blank">Open map in new window</a>.
+      <main>
+        <h1>Burgare på nätet</h1>
+
+        <section id = "utbud">
+          <h2>Utbud</h2>
+
+          <table>
+            <thead>
+                <tr>
+                    <th>ELD</th>
+                    <th>VATTEN</th>
+                    <th>JORD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="http://www.freakingnews.com/pictures/16500/Fir-Burger--16904.jpg" alt="Span" title="Another in-line element" width="200"></td>
+                    <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkD6Sjskr9dLspLUB51ICXBiEUFuARSXiLj30CZk--bSz6oZyg" alt="Span" title="Another in-line element" width="200"></td>
+                    <td><img src="https://pbs.twimg.com/media/DieqYUMUYAApCc4.jpg" alt="Span" title="Another in-line element" width="200"></td>
+                </tr>
+                <tr>
+                    <td>
+                      <ul>
+                        <li>spår av nötter</li>
+                        <li>god</li>
+                      </ul>
+                    </td>
+
+                    <td>
+                      <ul>
+                        <li>spår av nötter</li>
+                        <li>god</li>
+                      </ul>
+                    </td>
+
+                    <td>
+                      <ul>
+                        <li>spår av nötter</li>
+                        <li>god</li>
+                      </ul>
+                    </td>
+                </tr>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">Total</td>
+                    <td>SEK 203</td>
+                </tr>
+            </tfoot>
+          </table>
+
+        </section>
+
+        <section id = "Kontakt">
+          <h3>Kontakt info</h3>
+          <form>
+            <p>
+                <label for="name">Namn: </label><br>
+                <input type="text" id="name" name="n" required="required" placeholder="För- och efternamn">
+            </p>
+            <p>
+                <label for="adress">Adress: </label><br>
+                <input type="adress" id="adress" name="a" placeholder="Hem adress">
+            </p>
+            <p>
+                <label for="gatunummer">Gatunummer: </label><br>
+                <input type="number" id="gatunummer" name="a" placeholder="Hem adress">
+            </p>
+            <p>
+                <label for="email">Email: </label><br>
+                <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+            </p>
+            <p>
+              <label for="betalinfo">Betalnings metod: </label><br>
+              <select id="betalinfo" name="bi">
+                <option>MastrCard</option>
+                <option>Kontant</option>
+                <option>Visa</option>
+              </select>
+            </p>
+            <p>
+              <label for="gender">Kön: </label><br>
+              <input type="radio" name="gender" value="male"> Male<br>
+              <input type="radio" name="gender" value="female"> Female<br>
+              <input type="radio" name="gender" value="other"> Other
+            </p>
+            <button type="submit"><img src="./static/1md034/img/html/image_button.png"> Beställ</button>
+          </form>
+        </section>
+
+        <footer>
+         fötter
+        </footer>
+      </main>
     </body>
 </html>
