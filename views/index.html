@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script src="https://vuejs.org/js/vue.js" defer></script>
+        <script type="text/javascript" src="js/menu.js"></script>
+        <script src="js/js_script.js" defer></script>
+
+        <script src="js/vue_script.js" defer></script>
+
         <link rel="stylesheet" type="text/css" href="css/style.css">
+
         <title>Allt burgar här</title>
         <meta charset="utf-8"/>
     </head>
     <body>
-      <main>
+      <main id = main>
 
         <section id = header>
           <h1>Burgare på nätet</h1>
@@ -16,70 +23,46 @@
         <section id = "utbud">
           <h2>Utbud</h2>
 
-          <div class="wrapper">
+          <div id="wrapper">
 
+            <div v-for="burger in food" class = "item">
+              <h1 class="title"> {{ burger.name }} </h1>
+              <img v-bind:src= burger.img >
+              <input type="checkbox" class="burgers" v-bind:value= burger.name v-model = "burgerChoice">
+              <ul>
+                <li>{{ burger.kCal }} kCal</li>
+                <li v-if = burger.lactose>Innehåller spår av laktos.</li>
+                <li v-if = burger.gluten>Innehåller spår av gluten.</li>
+              </ul>
+            </div>
 
-                    <div class="box a">BURGARE</div>
-                    <div class="box a">BULGARIE</div>
-                    <div class="box a">BRURGER</div>
+          </div>
 
-
-
-                    <div class="box b"><img src="https://i.pinimg.com/originals/ef/08/65/ef0865a83a47e946e086a9e97ead23df.jpg" width = 400px ></div>
-                    <div class="box b"><img src="https://cdn.shopify.com/s/files/1/1061/1924/products/Cheese_Burger_Emoji_large.png?v=1480481064" width = 400px</div> </div>
-                    <div class="box b"><img src="https://friendlystock.com/wp-content/uploads/2018/04/7-laughing-lol-hamburger-emoji-cartoon-clipart.jpg" width = 400px></div>
-
-
-
-                    <div class="box c">
-                      <ul>
-                        <li>spår av <span id="alergen">ananas</span></li>
-
-                        <li>god</li>
-                      </ul>
-                    </div>
-
-                    <div class="box c">
-                      <ul>
-                        <li>spår av <span id="alergen">laktos</span></li>
-                        <li>god</li>
-                      </ul>
-                    </div>
-
-                    <div class="box c">
-                      <ul>
-                        <li>spår av <span id="alergen">nötter</span></li>
-                        <li>god</li>
-                      </ul>
-                    </div>
-
-
-              </div>
 
         </section>
 
         <section id = "kontakt">
           <h2>Kontakt info</h2>
-          <form>
+          <form name = "order">
             <p>
                 <label for="name">Namn: </label><br>
-                <input type="text" id="name" name="n" required="required" placeholder="För- och efternamn">
+                <input type="text" id="name" name="n" required="required" placeholder="För- och efternamn" v-model = "name">
             </p>
             <p>
                 <label for="adress">Adress: </label><br>
-                <input type="adress" id="adress" name="a" placeholder="Hem adress">
+                <input type="adress" id="adress" name="a" placeholder="Hem adress" v-model = "adress">
             </p>
             <p>
                 <label for="gatunummer">Gatunummer: </label><br>
-                <input type="number" id="gatunummer" name="a" placeholder="Hem adress">
+                <input type="number" id="gatunummer" name="a" placeholder="Hem adress" v-model = "houseNR">
             </p>
             <p>
                 <label for="email">Email: </label><br>
-                <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+                <input type="email" id="email" name="em" required="required" placeholder="email@hotmailllllllll.com" v-model = "email">
             </p>
             <p>
               <label for="betalinfo">Betalnings metod: </label><br>
-              <select id="betalinfo" name="bi">
+              <select id="betalinfo" name="bi" v-model = "paymentMethod">
                 <option>MastrCard</option>
                 <option>Kontant</option>
                 <option>Visa</option>
@@ -87,13 +70,19 @@
             </p>
             <p>
               <label for="gender">Kön: </label><br>
-              <input type="radio" name="gender" value="male"> Male<br>
-              <input type="radio" name="gender" value="female"> Female<br>
-              <input type="radio" name="gender" value="other"> Other
+              <input class = "gender" type="radio" id = "male" name="gender" value="male" checked="unchecked" v-model = "gender"> Male<br>
+              <input class = "gender" type="radio" id = "female" name="gender" value="female" v-model = "gender"> Female<br>
+              <input class = "gender" type="radio" id = "other" name="gender" value="other" v-model = "gender"> Other
             </p>
-            <button type="submit"><img src="./static/1md034/img/html/image_button.png"> Beställ</button>
+
           </form>
+          <button v-on:click="markDone">Klart</button>
+
+          <p id="confirm">
+            {{ orderText }}
+          </p>
         </section>
+
 
         <footer>
          fötter
