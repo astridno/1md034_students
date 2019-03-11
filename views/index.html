@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script src="https://vuejs.org/js/vue.js" defer></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link rel="stylesheet" href="css/deli-very.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
         <script type="text/javascript" src="js/menu.js"></script>
-        <script src="js/js_script.js" defer></script>
+        <script src="/socket.io/socket.io.js" defer></script>
+        <script src="https://vuejs.org/js/vue.js" defer></script>
+        <!-- <script src="/vue/vue.js" defer></script> -->
 
         <script src="js/vue_script.js" defer></script>
 
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <script src="js/js_script.js" defer></script>
 
         <title>Allt burgar här</title>
         <meta charset="utf-8"/>
@@ -48,14 +57,7 @@
                 <label for="name">Namn: </label><br>
                 <input type="text" id="name" name="n" required="required" placeholder="För- och efternamn" v-model = "name">
             </p>
-            <p>
-                <label for="adress">Adress: </label><br>
-                <input type="adress" id="adress" name="a" placeholder="Hem adress" v-model = "adress">
-            </p>
-            <p>
-                <label for="gatunummer">Gatunummer: </label><br>
-                <input type="number" id="gatunummer" name="a" placeholder="Hem adress" v-model = "houseNR">
-            </p>
+
             <p>
                 <label for="email">Email: </label><br>
                 <input type="email" id="email" name="em" required="required" placeholder="email@hotmailllllllll.com" v-model = "email">
@@ -76,11 +78,29 @@
             </p>
 
           </form>
-          <button v-on:click="markDone">Klart</button>
+
+            <h1> Click in the map! </h1>
+            <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+            <div class="view-box">
+              <div id="dots" v-on:click="displayOrder">
+                  <div
+                    v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+                    {{ order.orderId }}
+                  </div>
+              </div>
+            </div>
+
+
+
+          <button v-on:click="addOrder">Klart</button>
 
           <p id="confirm">
             {{ orderText }}
           </p>
+
+
+
+
         </section>
 
 
